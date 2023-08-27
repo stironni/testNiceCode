@@ -10,21 +10,21 @@ function Consultations ()  {
             dateConsultation: "15.01.2019",
             timeStart: "12:30",
             timeEnd: "13:00",
-            statusConsultation: 'active',
+            statusConsultation: 'activeOnline',
         },
         {
             titleConsultation: "Online консультация",
             dateConsultation: "15.01.2019",
             timeStart: "12:30",
             timeEnd: "13:00",
-            statusConsultation: 'wait',
+            statusConsultation: 'waitOnline',
         },
         {
             titleConsultation: "Личный приём",
             dateConsultation: "15.01.2019",
             timeStart: "12:30",
             timeEnd: "13:00",
-            statusConsultation: 'wait',
+            statusConsultation: 'waitMeet',
         },
 
 ]
