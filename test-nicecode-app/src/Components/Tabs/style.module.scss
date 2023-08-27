@@ -1,7 +1,17 @@
 .main {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.addbutton {
+    display: flex;
+    width: 200px;
+}
+
+.tabs {
+    display: flex;
     margin: 10px 0;
-    width: 744px;
     height: 26px;
     display: flex;
     flex-direction: row;

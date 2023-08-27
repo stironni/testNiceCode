@@ -2,10 +2,13 @@
     display: flex;
     width: 1140px;
     margin: 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 }
 
 .leftSide {
-    width: 374px;
+    width: 366px;
     display: flex;
     flex-direction: column;
 
@@ -17,9 +20,6 @@
     flex-direction: column;
 }
 
-.search {
-    display: flex;
-}
 
 .counter {
     display: flex;

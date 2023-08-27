@@ -4,6 +4,7 @@ import NoteList from "../NoteList/NoteList";
 import style from './style.module.scss';
 import VideoList from "../VideoList/VideoList"
 import EventList from "../EventList/EventList"
+import AddButton from "../AddButton/AddButton.";
 
 function Tabs () {
 
@@ -19,18 +20,27 @@ function Tabs () {
     return (
         <>
         <div className={style.main}>
-            <button className={activeTab === 'tab1' ? style.tabActive : style.tab} onClick={() => onClickTab(1)}>Заметки</button>
-            <div className={style.vLine}></div>
-            <button className={activeTab === 'tab2' ? style.tabActive : style.tab} onClick={() => onClickTab(2)}>Консультации</button>
-            <div className={style.vLine}></div>
-            <button className={activeTab === 'tab3' ? style.tabActive : style.tab} onClick={() => onClickTab(3)}>Видео</button>
-            <div className={style.vLine}></div>
-            <button className={activeTab === 'tab4' ? style.tabActive : style.tab} onClick={() => onClickTab(4)}>Мероприятия</button>
-        </div>
-        {activeTab === 'tab1' && <NoteList />}
-        {activeTab === 'tab2' && <ConsultationList />}
-        {activeTab === 'tab3' && <VideoList />}
-        {activeTab === 'tab4' && <EventList />}
+            <div className={style.tabs}>
+                <button className={activeTab === 'tab1' ? style.tabActive : style.tab} onClick={() => onClickTab(1)}>Заметки</button>
+                <div className={style.vLine}></div>
+                <button className={activeTab === 'tab2' ? style.tabActive : style.tab} onClick={() => onClickTab(2)}>Консультации</button>
+                <div className={style.vLine}></div>
+                <button className={activeTab === 'tab3' ? style.tabActive : style.tab} onClick={() => onClickTab(3)}>Видео</button>
+                <div className={style.vLine}></div>
+                <button className={activeTab === 'tab4' ? style.tabActive : style.tab} onClick={() => onClickTab(4)}>Мероприятия</button>
+            </div>
+            <div className={style.addbutoon}>
+                {activeTab === 'tab1' && <AddButton title="Новая заметка" />}
+                {activeTab === 'tab2' && <AddButton title="Записать"/>}
+                {activeTab === 'tab3' && <AddButton title="Рекомендовать"/>}
+                {activeTab === 'tab4' && <AddButton title="Рекомендовать"/>}
+            </div>
+            </div>
+                {activeTab === 'tab1' && <NoteList />}
+                {activeTab === 'tab2' && <ConsultationList />}
+                {activeTab === 'tab3' && <VideoList />}
+                {activeTab === 'tab4' && <EventList />}
+        
         </>
     )
 }

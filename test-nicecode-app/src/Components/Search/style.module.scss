@@ -1,0 +1,52 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 366px;
+    height: 60px;
+    flex-shrink: 0;
+    background-color: #fff;
+
+}
+
+input {
+    width: 366px;
+    height: 60px;
+    flex-shrink: 0;
+    background-color: #fff;
+    border: none;
+}
+
+
+button {
+    display: flex;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: var(--f-1-f-2-f-4, #F1F2F3);
+    background-repeat: no-repeat;
+    // padding: auto;
+    background-position: center;
+}
+.iconSearch {
+    margin-left: 10px;
+    display: flex;
+    background-image: url("../../assets/icons/loupe\ 1.svg");
+}
+
+.iconFilter {
+    margin-right: 10px;
+    background-image: url("../../assets/icons/Filter.svg");
+}
+
+.iconPlus {
+    margin-right: 10px;
+    background-image: url("../../assets/icons/PlusOnSearch.svg");
+}
+
+.rightIcon, .leftIcon {
+    display: flex;
+    flex-direction: row;
+
+}

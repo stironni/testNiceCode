@@ -2,6 +2,7 @@ import React from 'react';
 import style from './style.module.scss';
 import InfoAboutContact from '../../Components/InfoAboutContact/InfoAboutContact'
 import Tabs from '../../Components/Tabs/Tabs';
+import Search from '../../Components/Search/Search';
 
 function Home () {
 
@@ -9,7 +10,7 @@ function Home () {
     return (
         <div className={style.main}>
             <div className={style.leftSide}> 
-                <div className={style.search}>Поиск</div>
+                <Search />
                 <div className={style.counter}>Счетчик</div>
                 <div className={style.contacts}>Список контактов</div>
             </div>
