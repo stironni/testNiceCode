@@ -1,6 +1,8 @@
 import React from 'react';
 import style from './style.module.scss';
 import InfoAboutContact from '../../Components/InfoAboutContact/InfoAboutContact'
+import Tabs from '../../Components/Tabs/tabs';
+import NoteList from '../../Components/NoteList/NoteList';
 
 function Home () {
 
@@ -14,8 +16,8 @@ function Home () {
             </div>
             <div className={style.rightSide}>
                 <InfoAboutContact />
-                <div className={style.tabs}>Табы</div>   
-                <div className={style.infoSelectedTab}>Блок с инфой</div> 
+                <Tabs /> 
+                {/* <NoteList /> */}
             </div>
         </div>
     )
