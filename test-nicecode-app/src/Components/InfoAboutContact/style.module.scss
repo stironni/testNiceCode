@@ -1,0 +1,36 @@
+.contactInfo {
+    width: 744px;
+    height: 110px;
+    background-color: #fff;
+    display: flex;
+    box-shadow: 0px 1px 4px 0px #1E1E1E1A;
+
+}
+
+.foto {
+    margin: auto 10px;
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+}
+
+.fio {
+    margin-top: 15px;
+    color: var(--unnamed, #161718);
+    font-family: 'SFProDisplay';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 125% */
+}
+
+.info {
+    margin-top: 5px;
+    text-align: left;
+    font-family: 'SFProDisplay';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0px;
+    margin-left: 5px;
+}

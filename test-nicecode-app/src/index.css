@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  background-color: #F1F2F3;
+  font-family: -apple-system, BlinkMacSystemFont, 'SFProDisplay', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url(assets/fonts/FontsFree-Net-SFProDisplay-Regular.ttf);
+}

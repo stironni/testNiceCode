@@ -1,0 +1,45 @@
+.main {
+    display: flex;
+    width: 1140px;
+    margin: 0;
+}
+
+.leftSide {
+    width: 374px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.rightSide {
+    width: 744px;
+    display: flex;
+    flex-direction: column;
+}
+
+.search {
+    display: flex;
+}
+
+.counter {
+    display: flex;
+}
+
+.contacts {
+    display: flex;
+}
+
+.tabs {
+    margin: 10px 0;
+    width: 744px;
+    height: 26px;
+    display: flex;
+}
+
+.infoSelectedTab {
+    padding: 10px;
+    width: 100%;
+    height: 784px;
+    background-color: #fff;
+    display: flex;
+}
