@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./style.module.scss";
-// import activeOnline from "../../assets/icons/Group 10.svg"
 
 function Consultation (props : any) {
 

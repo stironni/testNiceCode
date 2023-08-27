@@ -1,0 +1,99 @@
+.main {
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 714px;
+    height: 66px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border: solid 1px #CDCDCD;
+
+}
+
+.img {
+    width: 82px;
+    height: 46px;
+    top: 10px;
+    left: 10px;
+}
+
+.title {
+    display: inline;
+    text-align: left;
+    color: var(--unnamed, #161718);
+    font-family: 'SFProDisplay';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 100% */
+    width: 450px;
+    overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.secondLine {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-grow: 50px;
+}
+
+.type, .date, .time {
+    margin-right: 30px;
+    margin-top: 10px;
+    display: inline-block;
+    text-align: left;
+    color: var(--unnamed, #616F82);
+    font-family: 'SFProDisplay';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: auto;
+}
+
+.textBlock {
+    width: px;
+    height: 46px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+
+}
+
+.iconType {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    padding-left: 20px;
+    background-image: url("../../../assets/icons/video-camera.svg");
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+.iconDate {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    padding-left: 20px;
+    background-image: url("../../../assets/icons/calendar.svg");
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+.iconTime {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    padding-left: 20px;
+    background-image: url("../../../assets/icons/clock.svg");
+    background-repeat: no-repeat;
+    background-color: #fff;
+}

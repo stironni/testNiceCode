@@ -1,8 +1,7 @@
 import React from 'react';
 import style from './style.module.scss';
 import InfoAboutContact from '../../Components/InfoAboutContact/InfoAboutContact'
-import Tabs from '../../Components/Tabs/tabs';
-import NoteList from '../../Components/NoteList/NoteList';
+import Tabs from '../../Components/Tabs/Tabs';
 
 function Home () {
 
@@ -16,8 +15,7 @@ function Home () {
             </div>
             <div className={style.rightSide}>
                 <InfoAboutContact />
-                <Tabs /> 
-                {/* <NoteList /> */}
+                <Tabs />
             </div>
         </div>
     )

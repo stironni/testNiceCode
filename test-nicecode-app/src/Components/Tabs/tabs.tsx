@@ -1,8 +1,9 @@
-import { Console } from "console";
 import React, { useState } from "react";
-import Consultations from "../Consultations/Consultations";
+import ConsultationList from "../ConsultationList/ConsultationList";
 import NoteList from "../NoteList/NoteList";
 import style from './style.module.scss';
+import VideoList from "../VideoList/VideoList"
+import EventList from "../EventList/EventList"
 
 function Tabs () {
 
@@ -13,7 +14,7 @@ function Tabs () {
         if (num === 2) setActiveTab('tab2');
         if (num === 3) setActiveTab('tab3');
         if (num === 4) setActiveTab('tab4');
-    } 
+    }
 
     return (
         <>
@@ -27,9 +28,9 @@ function Tabs () {
             <button className={activeTab === 'tab4' ? style.tabActive : style.tab} onClick={() => onClickTab(4)}>Мероприятия</button>
         </div>
         {activeTab === 'tab1' && <NoteList />}
-        {activeTab === 'tab2' && <Consultations />}
-        {activeTab === 'tab3' && <div></div>}
-        {activeTab === 'tab4' && <div></div>}
+        {activeTab === 'tab2' && <ConsultationList />}
+        {activeTab === 'tab3' && <VideoList />}
+        {activeTab === 'tab4' && <EventList />}
         </>
     )
 }

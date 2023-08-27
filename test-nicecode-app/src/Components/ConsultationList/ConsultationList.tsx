@@ -1,10 +1,18 @@
 import React from "react";
 import style from "./style.module.scss";
-import Consultation from "../Consultation/Consultation";
+import Consultation from "./Consultation/Consultation";
 
-function Consultations ()  {
+function ConsultationList ()  {
 
-    const dataConsultations = [
+    interface dataConsultation {
+        titleConsultation: string;
+        dateConsultation: string;
+        timeStart: string;
+        timeEnd: string;
+        statusConsultation: string;
+    }
+
+    const dataConsultations: dataConsultation[] = [
         {
             titleConsultation: "Online консультация",
             dateConsultation: "15.01.2019",
@@ -50,4 +58,4 @@ function Consultations ()  {
     );
 }
 
-export default Consultations;
+export default ConsultationList;

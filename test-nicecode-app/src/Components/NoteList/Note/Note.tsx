@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./style.module.scss";
-import Edit from "../Edit/Edit";
+import Edit from "../../Edit/Edit";
 
 function Note (props : any) {
     return (

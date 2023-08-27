@@ -1,13 +1,14 @@
 .main {
-    padding: 10px;
-    width: 100%;
+    width: 734px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
 }
 
 .note {
-    width: 680px;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 660px;
     text-align: left;
     color: var(--unnamed, #161718);
     font-family: 'SFProDisplay';
