@@ -3,6 +3,7 @@ import style from './style.module.scss';
 import InfoAboutContact from '../../Components/InfoAboutContact/InfoAboutContact'
 import Tabs from '../../Components/Tabs/Tabs';
 import Search from '../../Components/Search/Search';
+import ContactList from '../../Components/ContactList/ContactList';
 
 function Home () {
 
@@ -11,8 +12,8 @@ function Home () {
         <div className={style.main}>
             <div className={style.leftSide}> 
                 <Search />
-                <div className={style.counter}>Счетчик</div>
-                <div className={style.contacts}>Список контактов</div>
+                {/* <MenuContacts /> */}
+                <ContactList />
             </div>
             <div className={style.rightSide}>
                 <InfoAboutContact />

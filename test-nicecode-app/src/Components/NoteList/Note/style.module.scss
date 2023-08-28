@@ -3,11 +3,12 @@
     background-color: #fff;
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .note {
-    margin-left: 20px;
-    margin-top: 20px;
+    // margin-bottom: 20px;
+    // margin-top: 20px;
     width: 660px;
     text-align: left;
     color: var(--unnamed, #161718);
@@ -34,3 +35,4 @@ img {
     border-radius: 4px;
     background: var(--cdcdcd, #CDCDCD);
 }
+
