@@ -13,7 +13,7 @@ function Home () {
             <div className={style.leftSide}> 
                 <Search />
                 {/* <MenuContacts /> */}
-                <ContactList />
+                {/* <ContactList /> */}
             </div>
             <div className={style.rightSide}>
                 <InfoAboutContact />

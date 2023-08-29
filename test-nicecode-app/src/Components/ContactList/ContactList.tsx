@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "./style.module.scss";
 import Contact from "./Contact/Contact";
 import { dataContacts } from "../../DataBase";
 import CheckboxContact from "../CheckboxContact/CheckboxContact";
 
 
-function ContactList () {
+function ContactList (props : any) {
 
-    let [checkArray, setCheckArray] = useState([]);
+    let filterText : string = props.text;
+
+
+
+    let [arrayChecks, setArrayChecks] = useState([]);
 
     const row : any = [];
 
@@ -19,10 +23,21 @@ function ContactList () {
 
     let [isCheckedAll, setIsCheckedAll] = useState(false);
 
-    let [countChecked, setCountChecked]  = useState(0);
+    // let [countChecked, setCountChecked]  = useState(0);
+    let countChecked : number = 0;
     let [countContact, setCountContact] = useState(0);
 
-    dataContacts.forEach((dataContact, i) => {
+
+    dataContacts.forEach((dataContact) => {
+
+    let nameToSearch : string = dataContact.name.toLowerCase();
+
+
+    if (nameToSearch.indexOf(filterText.toLowerCase()) === -1) {
+      return;
+    }
+
+
         row.push(
             <Contact
             name={dataContact.name}
@@ -32,17 +47,35 @@ function ContactList () {
             isCheckedAll={isCheckedAll}
             isSelected={isSelected}
             countChecked={countChecked}
-            checkArray={checkArray}
-            setCheckArray={setCheckArray}
-            index={i}
-
+            arrayChecks={arrayChecks}
+            setArrayChecks={setArrayChecks}
+            id={dataContact.id}
             />
         )
-        
+        // isCheckedAll ? countChecked = countChecked + 1 : countChecked = countChecked + 0;
         isSelected ?  countContact = 0 : countContact = countContact + 1;
     });
 
-    console.log("checkArray",checkArray);
+
+
+    const AllCheck = () => {
+        console.log("AllCheck", arrayChecks.length);
+        console.log("AllCheck", arrayChecks);
+        if (isCheckedAll) {
+
+        }
+            setArrayChecks([]);
+
+    }
+
+
+    useEffect(() => {
+        
+    }, [isCheckedAll]);
+
+
+    countChecked = arrayChecks.length;
+    console.log("arrayChecks",arrayChecks);
 
     return (
 
