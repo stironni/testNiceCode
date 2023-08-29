@@ -4,12 +4,10 @@ import Contact from "./Contact/Contact";
 import { dataContacts } from "../../DataBase";
 import CheckboxContact from "../CheckboxContact/CheckboxContact";
 
-export function CheckedFunc (isCheckedAll : boolean, countChecked : number) : number {
-    isCheckedAll ? countChecked = countChecked + 1 : countChecked = countChecked + 0;
-    return countChecked;
-}
 
 function ContactList () {
+
+    let [checkArray, setCheckArray] = useState([]);
 
     const row : any = [];
 
@@ -24,8 +22,7 @@ function ContactList () {
     let [countChecked, setCountChecked]  = useState(0);
     let [countContact, setCountContact] = useState(0);
 
-    // let countChecked : number = 0;
-    dataContacts.forEach((dataContact) => {
+    dataContacts.forEach((dataContact, i) => {
         row.push(
             <Contact
             name={dataContact.name}
@@ -35,16 +32,17 @@ function ContactList () {
             isCheckedAll={isCheckedAll}
             isSelected={isSelected}
             countChecked={countChecked}
-            // func={() => CheckedFunc(isCheckedAll, countChecked)}
+            checkArray={checkArray}
+            setCheckArray={setCheckArray}
+            index={i}
+
             />
         )
-
-        // console.log("list", isChecked);
         
-        countChecked = CheckedFunc(isCheckedAll, countChecked);
-
         isSelected ?  countContact = 0 : countContact = countContact + 1;
     });
+
+    console.log("checkArray",checkArray);
 
     return (
 

@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./style.module.scss";
+import style from "./style.module.sass";
 import favoriteChecked  from "../../assets/icons/check.svg"
 import favoriteNoChecked from "../../assets/icons/noCheck.svg"
 
@@ -7,8 +7,6 @@ import favoriteNoChecked from "../../assets/icons/noCheck.svg"
 function CheckboxContact(props : any) {
 
   let isChecked = props.checked;
-  console.log("check", isChecked);
-
   const setIsChecked = (t : boolean) => {
     isChecked = !t
   }
