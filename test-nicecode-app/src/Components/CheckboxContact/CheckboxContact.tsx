@@ -9,6 +9,10 @@ function CheckboxContact(props : any) {
   let isChecked = props.checked;
   console.log("check", isChecked);
 
+  const setIsChecked = (t : boolean) => {
+    isChecked = !t
+  }
+
 //   console.log(props.onClick);
   
   return (
@@ -16,7 +20,7 @@ function CheckboxContact(props : any) {
       <input className={style.favoriteCheck}
         type="checkbox"
         onChange={() => {
-          isChecked = !isChecked;
+          setIsChecked(isChecked)
         }}
         onClick={props.onClick ? props.onClick : null}
       />

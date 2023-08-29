@@ -4,6 +4,11 @@ import Contact from "./Contact/Contact";
 import { dataContacts } from "../../DataBase";
 import CheckboxContact from "../CheckboxContact/CheckboxContact";
 
+export function CheckedFunc (isCheckedAll : boolean, countChecked : number) : number {
+    isCheckedAll ? countChecked = countChecked + 1 : countChecked = countChecked + 0;
+    return countChecked;
+}
+
 function ContactList () {
 
     const row : any = [];
@@ -14,11 +19,12 @@ function ContactList () {
         setIsSelected(!isSelected);
     };
 
-    let [isChecked, setIsChecked] = useState(false);
+    let [isCheckedAll, setIsCheckedAll] = useState(false);
 
     let [countChecked, setCountChecked]  = useState(0);
     let [countContact, setCountContact] = useState(0);
 
+    // let countChecked : number = 0;
     dataContacts.forEach((dataContact) => {
         row.push(
             <Contact
@@ -26,15 +32,17 @@ function ContactList () {
             status={dataContact.status}
             active={dataContact.active}
             img={dataContact.img} 
-            isChecked={isChecked}
+            isCheckedAll={isCheckedAll}
             isSelected={isSelected}
-            // func={() => {console.log("hi")}}
+            countChecked={countChecked}
+            // func={() => CheckedFunc(isCheckedAll, countChecked)}
             />
         )
 
-        console.log("list", isChecked);
+        // console.log("list", isChecked);
         
-        isChecked ? countChecked = countChecked + 1 : countChecked = 0;
+        countChecked = CheckedFunc(isCheckedAll, countChecked);
+
         isSelected ?  countContact = 0 : countContact = countContact + 1;
     });
 
@@ -44,7 +52,7 @@ function ContactList () {
         (
         <>
         <div className={style.mainMenu}>
-        <CheckboxContact title="Все" checked={isChecked} onClick={() => {setIsChecked(!isChecked)}} />
+        <CheckboxContact title="Все" checked={isCheckedAll} onClick={() => {setIsCheckedAll(!isCheckedAll)}} />
             <div className={style.counter}>{countChecked}</div>
             <button className={style.action}>Действия</button>
             <button className={style.cancel} onClick={() => {Selected()}}>Отменить</button>
