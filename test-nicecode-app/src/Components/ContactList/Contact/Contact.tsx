@@ -9,26 +9,33 @@ type ContactProps = {
     isActive : boolean,
     img : string,
     hasChecked : boolean,
+    isCheckedAll : string,
     setIsCheckedAll: any,
     isSelected : boolean,
     arrayChecks : number[],
     setArrayChecks : any,
     id : number,
-    countChecked : number,
-    setCountChecked: any,
+    // countChecked : number,
+    // setCountChecked: any,
+    // isCheckedAllFlag : boolean,
+    // setIsCheckedAllFlag : any,
 }
 function Contact ({name, 
                    status, 
                    isActive, 
                    img, 
-                   hasChecked, 
+                   hasChecked,
+                   isCheckedAll, 
                    setIsCheckedAll,
                    isSelected, 
                    arrayChecks, 
                    setArrayChecks, 
                    id,
-                   countChecked,
-                   setCountChecked,}: ContactProps) {
+                //    countChecked,
+                //    setCountChecked,
+                // isCheckedAllFlag,
+                // setIsCheckedAllFlag
+                }: ContactProps) {
 
     let [isChecked, setIsChecked] = useState(hasChecked);
     
@@ -42,46 +49,27 @@ function Contact ({name,
         if (isChecked) {
             if (arrayChecks.filter((item : number) => item === id).length === 0) {
                 setArrayChecks([...arrayChecks, id]);
-                setCountChecked(countChecked + 1);
             }
-        } else {
+        } 
+
+        if (!isChecked) {
             if (arrayChecks.filter((item : number) => item === id).length > 0) {
-                setArrayChecks(arrayChecks.filter((item : number) => item !== id))
-                setCountChecked(countChecked - 1);
-                setIsCheckedAll(false);
+                setArrayChecks(arrayChecks.filter((item : number) => item !== id));
+                setIsCheckedAll('once');
             }
         }
     }
+
 
     useEffect(() => {
         setChecked();
     }, [isChecked]);
 
-    // const setCheckedAll = () => {
-
-    //     if (isCheckedAll) {
-    //         console.log("hi");
-    //         setArrayChecks([...arrayChecks, id]);
-    //         setCountChecked(countChecked + 1);
-    //         // console.log("есть в массиве",arrayChecks.filter((item : number) => item === id).length > 0);
-
-    //     } else {
-    //         setArrayChecks(arrayChecks.filter((item : number) => item !== id))
-    //         setIsCheckedAll(false);
-    //         // console.log("isCheckedAll", isCheckedAll);
-    //         setCountChecked(countChecked - 1);
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     setCheckedAll();
-    // }, [isCheckedAll]);
-
 
     return (
         <div className={active} onClick={() => {}}>
             {status === 'New' ? <div className={style.mainNew}></div> : ""}
-            {isSelected ?<CheckboxContact checked={hasChecked} onClick={() => {setIsChecked(!(hasChecked))}} /> : ""}
+            {isSelected ?<CheckboxContact checked={hasChecked} onClick={() => {setIsChecked(!isChecked)}} /> : ""}
             <img className={style.image} src={img ? img : imageEmpty} alt="" />
             <div className={style.name}>{name}</div>
             {status === 'New' ? <div className={style.statusNew}></div> : ""}

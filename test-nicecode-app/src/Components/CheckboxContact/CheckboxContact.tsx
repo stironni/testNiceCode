@@ -3,7 +3,6 @@ import style from "./style.module.sass";
 import favoriteChecked  from "../../assets/icons/check.svg"
 import favoriteNoChecked from "../../assets/icons/noCheck.svg"
 
-
 function CheckboxContact(props : any) {
 
   let isChecked = props.checked;
