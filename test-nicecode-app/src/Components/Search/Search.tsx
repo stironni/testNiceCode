@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import style from "./style.module.sass";
 import ContactList from "../ContactList/ContactList";
-import style from "./style.module.scss";
 
 function Search () {
 

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import ConsultationList from "../ConsultationList/ConsultationList";
+import style from './style.module.sass';
 import NoteList from "../NoteList/NoteList";
-import style from './style.module.scss';
-import VideoList from "../VideoList/VideoList"
-import EventList from "../EventList/EventList"
-import AddButton from "../AddButton/AddButton.";
+import ConsultationList from "../ConsultationList/ConsultationList";
+import EventList from "../EventList/EventList";
+import VideoList from "../VideoList/VideoList";
+import AddButton from "../AddButton/AddButton";
 
 function Tabs () {
 

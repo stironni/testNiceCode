@@ -1,14 +1,20 @@
 import React from "react";
-import style from "./style.module.scss";
+import style from "./style.module.sass";
 import Edit from "../../Edit/Edit";
 
-function Note (props : any) {
+type NoteProps = {
+    noteDate : string,
+    noteText : string,
+    image : string,
+}
+
+function Note ({noteDate, noteText, image} : NoteProps) {
     return (
         <div className={style.main}>
             <div className={style.note}>
-            <span className={style.date}> {props.noteDate} </span> {props.noteText}
+            <span className={style.date}> {noteDate} </span> {noteText}
             <br></br>
-            {props.image ? <img src={props.image}></img> : ""}
+            {image ? <img src={image} alt=""></img> : ""}
             </div>
             <Edit />
         </div>

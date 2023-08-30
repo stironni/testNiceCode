@@ -1,11 +1,15 @@
 import React from "react";
-import style from './style.module.scss';
+import style from './style.module.sass';
 
-function AddButton (props : any) {
+type AddButtonProps = {
+    title : string,
+}
+
+function AddButton ({ title } : AddButtonProps) {
 
     return (
         <div className={style.main}>
-            <button className={style.button}>{props.title}</button>
+            <button className={style.button}>{title}</button>
             <button className={style.icon}></button>           
         </div>
         

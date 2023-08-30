@@ -1,5 +1,5 @@
-import React, { useEffect, useState }from "react";
-import style from "./style.module.scss";
+import React, { useEffect, useState } from "react";
+import style from "./style.module.sass";
 import CheckboxContact from "../../CheckboxContact/CheckboxContact";
 import imageEmpty from "../../../assets/images/contacts/noFoto.png"
 
@@ -15,43 +15,40 @@ type ContactProps = {
     arrayChecks : number[],
     setArrayChecks : any,
     id : number,
-    // countChecked : number,
-    // setCountChecked: any,
-    // isCheckedAllFlag : boolean,
-    // setIsCheckedAllFlag : any,
 }
-function Contact ({name, 
-                   status, 
-                   isActive, 
-                   img, 
-                   hasChecked,
-                   isCheckedAll, 
-                   setIsCheckedAll,
-                   isSelected, 
-                   arrayChecks, 
-                   setArrayChecks, 
-                   id,
-                //    countChecked,
-                //    setCountChecked,
-                // isCheckedAllFlag,
-                // setIsCheckedAllFlag
-                }: ContactProps) {
+
+function Contact ({
+                    name, 
+                    status, 
+                    isActive, 
+                    img, 
+                    hasChecked,
+                    isCheckedAll, 
+                    setIsCheckedAll,
+                    isSelected, 
+                    arrayChecks, 
+                    setArrayChecks, 
+                    id,
+                    }: ContactProps) {
 
     let [isChecked, setIsChecked] = useState(hasChecked);
     
     let active: string = style.main;
 
     if (isActive)  active = [style.main, style.selected].join(' ');
-    else active = [style.main, style.noSelected].join(' ')
+    else active = [style.main, style.noSelected].join(' ');
+
+    // eslint-disable-next-line
+    useEffect(() => {
+        setChecked()
+    }, [isChecked]); 
 
     const setChecked = () => {
-
         if (isChecked) {
             if (arrayChecks.filter((item : number) => item === id).length === 0) {
                 setArrayChecks([...arrayChecks, id]);
             }
         } 
-
         if (!isChecked) {
             if (arrayChecks.filter((item : number) => item === id).length > 0) {
                 setArrayChecks(arrayChecks.filter((item : number) => item !== id));
@@ -61,15 +58,11 @@ function Contact ({name,
     }
 
 
-    useEffect(() => {
-        setChecked();
-    }, [isChecked]);
-
 
     return (
         <div className={active} onClick={() => {}}>
             {status === 'New' ? <div className={style.mainNew}></div> : ""}
-            {isSelected ?<CheckboxContact checked={hasChecked} onClick={() => {setIsChecked(!isChecked)}} /> : ""}
+            {isSelected ?<CheckboxContact checked={hasChecked} sendClick={() => {setIsChecked(!isChecked)}} /> : ""}
             <img className={style.image} src={img ? img : imageEmpty} alt="" />
             <div className={style.name}>{name}</div>
             {status === 'New' ? <div className={style.statusNew}></div> : ""}

@@ -1,0 +1,102 @@
+.main
+  width: 366px
+  height: 835px
+  display: flex
+  flex-direction: column
+  overflow-y: scroll
+  -ms-overflow-style: none /* IE и Edge */
+  scrollbar-width: none
+
+.main::-webkit-scrollbar
+  display: none
+
+.mainMenu
+  width: 366px
+  height: 50px
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+
+.counter
+  display: block
+  padding: 2px 0px
+  align-items: center
+  min-width: 28px
+  min-height: 18px
+  width: auto
+  height: auto
+  border-radius: 9px
+  margin: auto 15px
+  background: var(--unnamed, #616F82)
+  box-sizing: border-box
+
+  color: var(--unnamed, #FFF)
+  text-align: center
+  font-feature-settings: 'clig' off, 'liga' off
+  font-family: 'SFProDisplay'
+  font-size: 12px
+  font-style: normal
+  font-weight: 500
+  line-height: 14px /* 116.667% */
+
+  flex-grow: 0
+  flex-shrink: 0
+
+.select
+  margin-right: 10px
+
+.cancel
+  margin-right: 10px
+
+.action
+  margin-left: 80px
+
+label
+  margin: auto 0px auto 5px
+  color: var(--unnamed, #616F82)
+  font-family: 'SFProDisplay'
+  font-size: 14px
+  font-style: normal
+  font-weight: 400
+  line-height: 20px /* 142.857% */
+  flex-grow: 0
+  flex-shrink: 0
+
+input[type="checkbox"]
+  margin-left: 9px
+  flex-grow: 0
+  flex-shrink: 0
+
+.checkbox
+  position: absolute
+  z-index: -1
+  opacity: 0
+
+  .checkbox+label
+    margin-left: 14px
+    display: inline-flex
+    align-items: center
+    user-select: none
+
+  .checkbox+label::before
+    content: ''
+    display: inline-block
+    width: 1em
+    height: 1em
+    flex-shrink: 0
+    flex-grow: 0
+    border: 1px solid #adb5bd
+    border-radius: 0.25em
+    margin-right: 0.5em
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: 50% 50%
+
+.checkbox:checked+label::before
+  border-color: #4198C5
+  background-color: #4198C5
+  background-size: auto
+  background-image: url("../../assets/icons/check.svg")
+
+  .checkbox:not(:disabled):not(:checked)+label:hover::before
+    border-color: #b3d7ff

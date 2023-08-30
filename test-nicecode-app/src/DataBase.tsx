@@ -1,9 +1,32 @@
+interface dataNote {
+    date : string;
+    text : string;
+    img : string;
+}
+
+export const dataNotes : dataNote[] = [
+    {
+        date: "20.12.2019",
+        text: `Физические упражнения способствуют активизации мышечных сокращений, 
+        кровотока в тканях, снимают отечность, повышают энергетические возможности мышц. 
+        Улучшенное питание мышечной ткани ускоряет замещение различных посттравматических 
+        дефектов в самих мышцах, костной ткани, связках и сухожилиях.`,
+        img: "",
+    },
+    {
+        date: "20.12.2019",
+        text: `Улучшенное питание мышечной ткани ускоряет замещение различных посттравматических 
+        дефектов в самих мышцах, костной ткани, связках и сухожилиях.`,
+        img: require("./assets/images/notes/7c229622bcbe6884f7be41a0fd6d814f.png"),
+    },
+];
+
 interface dataConsultation {
-    titleConsultation: string;
-    dateConsultation: string;
-    timeStart: string;
-    timeEnd: string;
-    statusConsultation: string;
+    titleConsultation: string,
+    dateConsultation: string,
+    timeStart: string,
+    timeEnd: string,
+    statusConsultation : 'activeOnline' | 'waitOnline' | 'waitMeet',
 }
 
 export const dataConsultations: dataConsultation[] = [
@@ -32,11 +55,11 @@ export const dataConsultations: dataConsultation[] = [
 ]
 
 interface Event {
-    title: string;
-    type: string;
-    date: string;
-    time: string;
-    img: string;
+    title: string,
+    type: string,
+    date: string,
+    time: string,
+    img: string,
 }
 
 export const dataEvents: Event[] = [
@@ -71,11 +94,11 @@ export const dataEvents: Event[] = [
 ]
 
 interface dataVidoe {
-    title: string;
-    autor: string;
-    dateStart: string;
-    dateEnd: string;
-    img: string;
+    title: string,
+    autor: string,
+    dateStart: string,
+    dateEnd: string,
+    img: string,
 }
 
 export const dataVideos: dataVidoe[] = [
@@ -103,11 +126,13 @@ export const dataVideos: dataVidoe[] = [
 ]
 
 interface Contact {
-    id: number;
-    name: string;
-    status: 'New' | 'Warning' | '';
-    active: boolean;
-    img: string;
+    id: number,
+    name: string,
+    status: 'New' | 'Warning' | '',
+    active: boolean,
+    img: string,
+    age: number,
+    male : 'муж' | 'жен' | '',
 }
 
 export const dataContacts: Contact[] = [
@@ -117,6 +142,8 @@ export const dataContacts: Contact[] = [
         status: 'New',
         active: false,
         img: require("./assets/images/contacts/one.png"),
+        age: 34,
+        male: 'жен',
     },
     {
         id: 2,
@@ -124,6 +151,8 @@ export const dataContacts: Contact[] = [
         status: '',
         active: true,
         img: require("./assets/images/contacts/two.png"),
+        age: 33,
+        male: 'муж',
     },
     {
         id: 3,
@@ -131,6 +160,8 @@ export const dataContacts: Contact[] = [
         status: 'Warning',
         active: false,
         img: require("./assets/images/contacts/one.png"),
+        age: 34,
+        male: 'жен',
     },
     {
         id: 4,
@@ -138,6 +169,8 @@ export const dataContacts: Contact[] = [
         status: '',
         active: false,
         img: require("./assets/images/contacts/three.png"),
+        age: 28,
+        male: 'жен',
     },
     {
         id: 5,
@@ -145,6 +178,8 @@ export const dataContacts: Contact[] = [
         status: '',
         active: false,
         img: require("./assets/images/contacts/4.png"),
+        age: 38,
+        male: 'муж',
     },
     {
         id: 6,
@@ -152,6 +187,8 @@ export const dataContacts: Contact[] = [
         status: '',
         active: false,
         img: null,
+        age: 19,
+        male: 'жен',
     },
     {
         id: 7,
@@ -159,6 +196,8 @@ export const dataContacts: Contact[] = [
         status: '',
         active: false,
         img: require("./assets/images/contacts/5.png"),
+        age: 45,
+        male: 'муж',
     },
     {
         id: 8,
@@ -166,6 +205,8 @@ export const dataContacts: Contact[] = [
         status: '',
         active: false,
         img: require("./assets/images/contacts/6.png"),
+        age: 27,
+        male: 'муж',
     },
     {
         id: 9,
@@ -173,6 +214,8 @@ export const dataContacts: Contact[] = [
         status: '',
         active: false,
         img: require("./assets/images/contacts/7.png"),
+        age: 34,
+        male: 'муж',
     },
     {
         id: 10,
@@ -180,6 +223,8 @@ export const dataContacts: Contact[] = [
         status: '',
         active: false,
         img: require("./assets/images/contacts/8.png"),
+        age: 28,
+        male: 'жен',
     },
     {
         id: 11,
@@ -187,6 +232,8 @@ export const dataContacts: Contact[] = [
         status: '',
         active: false,
         img: require("./assets/images/contacts/9.png"),
+        age: 26,
+        male: 'жен',
     },
     {
         id: 12,
@@ -194,6 +241,8 @@ export const dataContacts: Contact[] = [
         status: '',
         active: false,
         img: require("./assets/images/contacts/9.png"),
+        age: 26,
+        male: 'жен',
     },
     {
         id: 13,
@@ -201,6 +250,8 @@ export const dataContacts: Contact[] = [
         status: '',
         active: false,
         img: require("./assets/images/contacts/9.png"),
+        age: 26,
+        male: 'жен',
     },
     {
         id: 14,
@@ -208,5 +259,7 @@ export const dataContacts: Contact[] = [
         status: '',
         active: false,
         img: require("./assets/images/contacts/9.png"),
+        age: 26,
+        male: 'жен',
     },
 ]

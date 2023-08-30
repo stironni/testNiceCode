@@ -1,28 +1,32 @@
 import React from "react";
 import style from "./style.module.sass";
-import favoriteChecked  from "../../assets/icons/check.svg"
-import favoriteNoChecked from "../../assets/icons/noCheck.svg"
+import imgOfChecked  from "../../assets/icons/check.svg"
+import imgOfNoCheckedd from "../../assets/icons/noCheck.svg"
 
-function CheckboxContact(props : any) {
+type CheckboxProps = {
+  title? : string,
+  checked : boolean,
+  sendClick : () => void,
+}
 
-  let isChecked = props.checked;
+function CheckboxContact({title, checked, sendClick} : CheckboxProps ) {
+
+  let isChecked = checked;
   const setIsChecked = (t : boolean) => {
     isChecked = !t
   }
-
-//   console.log(props.onClick);
   
   return (
     <label>
-      <input className={style.favoriteCheck}
+      <input className={style.checked}
         type="checkbox"
         onChange={() => {
           setIsChecked(isChecked)
         }}
-        onClick={props.onClick ? props.onClick : null}
+        onClick={sendClick}
       />
-        <img className={style.checkbox} alt="" src={isChecked ? favoriteChecked : favoriteNoChecked} />
-        {props.title}
+        <img className={style.checkbox} alt="" src={isChecked ? imgOfChecked : imgOfNoCheckedd} />
+        {title}
     </label>
   );
 }

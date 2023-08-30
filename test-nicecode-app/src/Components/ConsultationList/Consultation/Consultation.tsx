@@ -1,22 +1,36 @@
 import React from "react";
-import style from "./style.module.scss";
+import style from "./style.module.sass";
 
-function Consultation (props : any) {
+type ConsultationProps = {
+    titleConsultation : string,
+    statusConsultation : 'activeOnline' | 'waitOnline' | 'waitMeet',
+    dateConsultation : string,
+    timeStart : string,
+    timeEnd : string,    
+}
+
+function Consultation ({ 
+    titleConsultation, 
+    statusConsultation, 
+    dateConsultation,
+    timeStart, 
+    timeEnd 
+} : ConsultationProps) {
 
     let iconStatus : string = "";
     let frame : string = "";                  
 
-    if (props.statusConsultation === 'activeOnline') {
+    if (statusConsultation === 'activeOnline') {
         iconStatus = [style.icon, style.activeOnline].join(' ');
         frame = [style.main, style.mainActive].join(' ');
     }
 
-    if (props.statusConsultation === 'waitOnline')  {
+    if (statusConsultation === 'waitOnline')  {
         iconStatus = [style.icon, style.waitOnline].join(' ');
         frame = [style.main, style.mainWait].join(' ');
     }
 
-    if (props.statusConsultation === 'waitMeet')  {
+    if (statusConsultation === 'waitMeet')  {
         iconStatus = [style.icon, style.waitMeet].join(' ');
         frame = [style.main, style.mainWait].join(' ');
     }
@@ -25,8 +39,8 @@ function Consultation (props : any) {
         <div className={frame}>
             <div className={iconStatus}></div>
             <div className={style.textBlock}>
-            <div className={style.title}>{props.titleConsultation}</div>
-            <div className={style.dateTime}>{props.dateConsultation}, {props.timeStart}-{props.timeEnd}</div>
+            <div className={style.title}>{titleConsultation}</div>
+            <div className={style.dateTime}>{dateConsultation}, {timeStart}-{timeEnd}</div>
             </div>
             
             

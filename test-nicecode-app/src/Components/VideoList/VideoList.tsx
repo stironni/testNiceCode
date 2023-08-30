@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./style.module.scss";
+import style from "./style.module.sass";
 import Video from "./Video/Video";
 import { dataVideos } from "../../DataBase";
 

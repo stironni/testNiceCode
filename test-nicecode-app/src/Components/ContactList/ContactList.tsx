@@ -1,20 +1,22 @@
-import React, { useState, useEffect } from "react";
-import style from "./style.module.scss";
+import React, { useState } from "react";
+import style from "./style.module.sass";
 import Contact from "./Contact/Contact";
 import { dataContacts } from "../../DataBase";
 import CheckboxContact from "../CheckboxContact/CheckboxContact";
 
-function ContactList (props : any) {
+type ContactListProps = {
+    text : string,
+}
 
-    let filterText : string = props.text;
+function ContactList ({text} : ContactListProps) {
+
+    let filterText : string = text;
 
     const [arrayChecks, setArrayChecks] = useState<number[]>([]);
     const [isCheckedAll, setIsCheckedAll] = useState('none');
     const [isSelected, setIsSelected]  = useState(false);
     let countContact : number = 0;
     let countChecked : number = 0;
-
-    console.log("isCheckedAll",isCheckedAll);
 
     const row : any = [];
 
@@ -23,7 +25,6 @@ function ContactList (props : any) {
         setArrayChecks([]);
         setIsCheckedAll('none');
     }
-
 
     dataContacts.forEach((dataContact) => {
 
@@ -52,8 +53,6 @@ function ContactList (props : any) {
             isSelected={isSelected}
             arrayChecks={arrayChecks}
             setArrayChecks={setArrayChecks}
-            // isCheckedAllFlag={isCheckedAllFlag}
-            // setIsCheckedAllFlag={setIsCheckedAllFlag}
             />
         )
 
@@ -68,11 +67,8 @@ function ContactList (props : any) {
         if (isCheckedAll === 'once' || isCheckedAll === 'none')
             setIsCheckedAll('all');
     }
-
     
     countChecked = arrayChecks.length;
-    console.log("countChecked", countChecked);
-    console.log("ContactList", arrayChecks);
 
     return (
 
@@ -80,7 +76,7 @@ function ContactList (props : any) {
         (
         <>
         <div className={style.mainMenu}>
-        <CheckboxContact title="Все" checked={isCheckedAll === 'all' ? true : false} onClick={() => {CheckedAllFunc()}} />
+        <CheckboxContact title="Все" checked={isCheckedAll === 'all' ? true : false} sendClick={() => {CheckedAllFunc()}} />
             <div className={style.counter}>{countChecked}</div>
             <button className={style.action}>Действия</button>
             <button className={style.cancel} onClick={() => {Selected()}}>Отменить</button>

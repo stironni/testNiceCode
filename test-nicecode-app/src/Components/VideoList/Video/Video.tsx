@@ -1,18 +1,30 @@
 import React from "react";
-import style from "./style.module.scss";
+import style from "./style.module.sass";
 
-function Video (props : any) {
+type VideoProps = {
+    title : string,
+    autor : string,
+    dateStart : string,
+    dateEnd : string,
+    img : string,
+}
 
-
+function Video ({
+    title, 
+    autor, 
+    dateStart, 
+    dateEnd, 
+    img
+} : VideoProps) {
 
     return (
         <div className={style.main}>
-            <img className={style.img} src={props.img}></img>
+            <img className={style.img} alt="" src={img}></img>
             <div className={style.textBlock}>
-                <div className={style.title}>{props.title}</div>
+                <div className={style.title}>{title}</div>
                 <div className={style.autorDate}>
-                    <div className={style.autor}>{props.autor}</div>
-                    <div className={style.dateTime}> {props.dateStart}{props.dateStart && props.dateEnd ? "-" : ""}{props.dateEnd}</div>
+                    <div className={style.autor}>{autor}</div>
+                    <div className={style.dateTime}> {dateStart}{dateStart && dateEnd ? "-" : ""}{dateEnd}</div>
                 </div>
             </div>
             
