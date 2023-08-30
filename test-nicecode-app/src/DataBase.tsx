@@ -105,7 +105,7 @@ export const dataVideos: dataVidoe[] = [
 interface Contact {
     id: number;
     name: string;
-    status: string;
+    status: 'New' | 'Warning' | '';
     active: boolean;
     img: string;
 }
@@ -114,98 +114,98 @@ export const dataContacts: Contact[] = [
     {
         id: 1,
         name: "Кравцова Александра",
-        status: "New",
+        status: 'New',
         active: false,
         img: require("./assets/images/contacts/one.png"),
     },
     {
         id: 2,
         name: "Рожков Денис ",
-        status: "",
+        status: '',
         active: true,
         img: require("./assets/images/contacts/two.png"),
     },
     {
         id: 3,
         name: "Кравцова Александра",
-        status: "Warning",
+        status: 'Warning',
         active: false,
         img: require("./assets/images/contacts/one.png"),
     },
     {
         id: 4,
         name: "Диброва Алевтина",
-        status: "",
+        status: '',
         active: false,
         img: require("./assets/images/contacts/three.png"),
     },
     {
         id: 5,
         name: "Иванов Дмитрий",
-        status: "",
+        status: '',
         active: false,
         img: require("./assets/images/contacts/4.png"),
     },
     {
         id: 6,
         name: "nosikov@list.ru",
-        status: "",
+        status: '',
         active: false,
         img: null,
     },
     {
         id: 7,
         name: "Форс Александр",
-        status: "",
+        status: '',
         active: false,
         img: require("./assets/images/contacts/5.png"),
     },
     {
         id: 8,
         name: "Ахмедов Артур",
-        status: "",
+        status: '',
         active: false,
         img: require("./assets/images/contacts/6.png"),
     },
     {
         id: 9,
         name: "Блажевич Игорь",
-        status: "",
+        status: '',
         active: false,
         img: require("./assets/images/contacts/7.png"),
     },
     {
         id: 10,
         name: "Валиева Руфина",
-        status: "",
+        status: '',
         active: false,
         img: require("./assets/images/contacts/8.png"),
     },
     {
         id: 11,
         name: "Волошина Виктория",
-        status: "",
+        status: '',
         active: false,
         img: require("./assets/images/contacts/9.png"),
     },
     {
         id: 12,
         name: "Волошина Виктория",
-        status: "",
+        status: '',
         active: false,
         img: require("./assets/images/contacts/9.png"),
     },
     {
         id: 13,
         name: "Волошина Виктория",
-        status: "",
+        status: '',
         active: false,
         img: require("./assets/images/contacts/9.png"),
     },
     {
         id: 14,
         name: "Волошина Виктория",
-        status: "",
+        status: '',
         active: false,
         img: require("./assets/images/contacts/9.png"),
     },

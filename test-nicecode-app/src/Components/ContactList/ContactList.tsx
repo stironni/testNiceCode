@@ -9,71 +9,74 @@ function ContactList (props : any) {
 
     let filterText : string = props.text;
 
+    const [arrayChecks, setArrayChecks] = useState([0]);
+    const [isCheckedAll, setIsCheckedAll] = useState(false);
+    const [isSelected, setIsSelected]  = useState(false);
+    let [countContact, setCountContact] = useState(0);
+    let [countChecked, setCountChecked]  = useState(0);
 
-
-    let [arrayChecks, setArrayChecks] = useState([]);
 
     const row : any = [];
 
-    let [isSelected, setIsSelected]  = useState(false);
 
     const Selected = () => {
         setIsSelected(!isSelected);
+        if (isSelected) {         
+            setIsCheckedAll(false);
+            setArrayChecks([]);
+        } else {
+            setArrayChecks([]);
+        }
+            
+
     };
-
-    let [isCheckedAll, setIsCheckedAll] = useState(false);
-
-    // let [countChecked, setCountChecked]  = useState(0);
-    let countChecked : number = 0;
-    let [countContact, setCountContact] = useState(0);
-
 
     dataContacts.forEach((dataContact) => {
 
     let nameToSearch : string = dataContact.name.toLowerCase();
 
-
     if (nameToSearch.indexOf(filterText.toLowerCase()) === -1) {
       return;
     }
 
+    if (isCheckedAll)  {
+        if (arrayChecks.filter((item : number) => item === dataContact.id).length === 0) {
+            let copy : number []= Object.assign([], arrayChecks);
+            copy = arrayChecks;
+            copy.push(dataContact.id)
+            setArrayChecks(copy);
+        }
+    }
 
         row.push(
             <Contact
             name={dataContact.name}
             status={dataContact.status}
-            active={dataContact.active}
+            isActive={dataContact.active}
             img={dataContact.img} 
-            isCheckedAll={isCheckedAll}
+            hasChecked={arrayChecks.filter((item : number) => item === dataContact.id).length > 0}
+            setIsCheckedAll={setIsCheckedAll}
             isSelected={isSelected}
-            countChecked={countChecked}
             arrayChecks={arrayChecks}
             setArrayChecks={setArrayChecks}
             id={dataContact.id}
+            countChecked={countChecked}
+            setCountChecked={setCountChecked}
             />
         )
-        // isCheckedAll ? countChecked = countChecked + 1 : countChecked = countChecked + 0;
+
         isSelected ?  countContact = 0 : countContact = countContact + 1;
     });
 
-
-
-    const AllCheck = () => {
-        console.log("AllCheck", arrayChecks.length);
-        console.log("AllCheck", arrayChecks);
-        if (isCheckedAll) {
-
-        }
+    const checkAll = () => {
+        if(isCheckedAll) {
+            setIsCheckedAll(false);
             setArrayChecks([]);
-
+        } else {
+            setIsCheckedAll(true);
+        }
     }
-
-
-    useEffect(() => {
-        
-    }, [isCheckedAll]);
-
-
+    
     countChecked = arrayChecks.length;
     console.log("arrayChecks",arrayChecks);
 
@@ -83,7 +86,7 @@ function ContactList (props : any) {
         (
         <>
         <div className={style.mainMenu}>
-        <CheckboxContact title="Все" checked={isCheckedAll} onClick={() => {setIsCheckedAll(!isCheckedAll)}} />
+        <CheckboxContact title="Все" checked={isCheckedAll} onClick={() => {checkAll()}} />
             <div className={style.counter}>{countChecked}</div>
             <button className={style.action}>Действия</button>
             <button className={style.cancel} onClick={() => {Selected()}}>Отменить</button>
@@ -105,9 +108,6 @@ function ContactList (props : any) {
         </div>
         </>
         )
-
-
-        
     )
 }
 
